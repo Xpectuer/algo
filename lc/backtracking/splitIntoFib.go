@@ -2,6 +2,7 @@ package backtracking
 
 import "math"
 
+// leetcode 842.
 func splitIntoFibonacci(s string) (F []int) {
 	n := len(s)
 	var backtrack func(index, sum, prev int) bool
