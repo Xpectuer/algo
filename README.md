@@ -1,6 +1,6 @@
 # Project alGO
 
-## algo-with-go
+## Let's do Algo with Go
 
 Plz contribute your Solutions & Data structures by **pull request**\
 
@@ -27,3 +27,8 @@ https://golang.org/doc/tutorial/create-module
 > 如果你对Golang和Go单元测试还不熟悉，请参考：
 > https://studygolang.com/articles/31551  
 > http://docscn.studygolang.com/
+
+### Now Proceeding On:  
+- [ ] Automatic Unit test (Read From File & Contributable)
+- [ ] More Classic Interview Problems
+- [ ] Leetcode Daily
