@@ -22,6 +22,6 @@ func (mi *myInt) Pop() interface{} {
 
 func main() {
 	h := &myInt{1, 2, 3, 4}
-
+	heap.Init(h)
 	heap.Push(h, 3)
 }
