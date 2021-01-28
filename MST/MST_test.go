@@ -1,3 +1,11 @@
+/*
+ * @Author: your name
+ * @Date: 2021-01-18 21:46:06
+ * @LastEditTime: 2021-01-19 23:39:29
+ * @LastEditors: Please set LastEditors
+ * @Description: In User Settings Edit
+ * @FilePath: /algo/MST/MST_test.go
+ */
 package mst
 
 import "testing"
@@ -22,5 +30,11 @@ func TestPrim(t *testing.T) {
 	// t.Logf("%b\n", x)
 	// t.Logf("%b\n", x&^(1<<2))
 	t.Log(Prim(G))
+
+}
+
+func TestPG(t *testing.T) {
+	a := 1
+	t.Log(a)
 
 }
