@@ -37,7 +37,7 @@ func minimumEffortPath(heights [][]int) int {
 			}
 			for _, d := range dirs {
 				x, y := p.x+d.x, p.y+d.y
-				// ...<= maxHeightDiff
+				// ...<= maxHeightDiff / 如果大于，说明无法登上
 				if 0 <= x && x < n && 0 <= y && y < m && !vis[x][y] && abs(heights[x][y]-heights[p.x][p.y]) <= maxHeightDiff {
 					vis[x][y] = true
 					queue = append(queue, pair{x, y})
