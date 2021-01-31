@@ -1,7 +1,11 @@
+/*
+ * @Author: XPectuer
+ * @LastEditor: XPectuer
+ */
 package trieNew
 
 type TrieNode struct {
-  end bool
+	end      bool
 	word     string
 	Children []*TrieNode
 }
@@ -12,7 +16,7 @@ type Trie struct {
 
 /** Initialize your data structure here. */
 func Constructor() Trie {
-	root := &TrieNode{word: "$", Children: make([]*TrieNode, 26),end:false}
+	root := &TrieNode{word: "$", Children: make([]*TrieNode, 26), end: false}
 	return Trie{root: root}
 }
 
@@ -30,7 +34,7 @@ func (this *Trie) Insert(word string) {
 	}
 	// add last with word
 	node.word = word
-  node.end = true
+	node.end = true
 
 }
 
@@ -45,18 +49,18 @@ func (this *Trie) StartsWith(prefix string) bool {
 }
 
 func (this *Trie) find(word string, exact bool) bool {
-  node := this.root
-  for _, e:= word {
-    if node.Children[e-'a']!=nil {
-      return false
-    } else {
-      node = node.Children[e-'a']
-    }
-  }
-  if exact {
-    return node.end
-  }
-  return true
+	node := this.root
+	for _, e := range word {
+		if node.Children[e-'a'] != nil {
+			return false
+		} else {
+			node = node.Children[e-'a']
+		}
+	}
+	if exact {
+		return node.end
+	}
+	return true
 }
 
 /**

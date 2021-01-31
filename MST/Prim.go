@@ -1,8 +1,8 @@
 /*
  * @Author: your name
  * @Date: 2021-01-18 21:34:28
- * @LastEditTime: 2021-01-19 16:35:12
- * @LastEditors: your name
+ * @LastEditTime: 2021-01-31 11:04:46
+ * @LastEditors: Please set LastEditors
  * @Description: In User Settings Edit
  * @FilePath: /algo/MST/Prim.go
  */
@@ -22,7 +22,7 @@ import (
 func Prim(G [][]int) [][]int {
 	if len(G) == 0 || len(G[0]) == 0 {
 		panic("The graph cannot be empty!")
-            }
+	}
 
 	// initializing
 	var (
@@ -30,7 +30,6 @@ func Prim(G [][]int) [][]int {
 		queue   []int
 		edges   PriorityQueue
 	)
-        
 
 	queue = make([]int, 0, len(G))
 
@@ -39,7 +38,7 @@ func Prim(G [][]int) [][]int {
 	// select the first
 
 	// 11111
-	visited = (1 << (len(G) + 1)) - 1d
+	visited = (1 << (len(G) + 1)) - 1
 	// step1. select an arbitary node (the first one for example)
 	heap.Init(&edges)
 	queue = append(queue, 0)

@@ -1,7 +1,5 @@
 package slideWindow
 
-import "fmt"
-
 const INTMAX = 1 << 31
 
 func m_minWindow(s string, t string) string {
@@ -19,13 +17,12 @@ func m_minWindow(s string, t string) string {
 	for end < len(s) {
 		//fmt.Println("outer")
 
-		
 		if dict[s[end]] > 0 {
 			counter--
 		}
 		dict[s[end]]--
 		end++
-		
+
 		// find min window iteratively
 		for counter == 0 {
 			//fmt.Println("Inner")
@@ -35,18 +32,18 @@ func m_minWindow(s string, t string) string {
 			}
 
 			// left bound ->
-			
+
 			if dict[s[begin]] == 0 {
 				counter++
 			}
 			dict[s[begin]]++
 			begin++
-			
+
 		}
 	}
 
 	if length == INTMAX {
 		return ""
 	}
-	return s[head:head+length]
+	return s[head : head+length]
 }
