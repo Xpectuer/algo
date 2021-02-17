@@ -65,6 +65,7 @@ func partition(A []int, l, r int) int {
 // Reduce more entropy
 // But return Sorted TopK result
 func anotherPartition(A []int, l, r int) int {
+	// [l,r]
 	pivot := rand.Intn(r-l) + l
 
 	counter := l
@@ -161,7 +162,7 @@ func FindMid(A []int, l, r int) int {
 // InsertSort something
 func InsertSort(A []int, l, r int) {
 
-	for i := l+1; i <= r; i++ {
+	for i := l + 1; i <= r; i++ {
 		if A[i-1] > A[i] {
 			t := A[i]
 			j := i

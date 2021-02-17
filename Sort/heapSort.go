@@ -1,3 +1,7 @@
+/*
+ * @Author: XPectuer
+ * @LastEditor: XPectuer
+ */
 package mySort
 
 import "fmt"
@@ -36,6 +40,7 @@ func siftdown(A *[]int, n, i0 int) {
 	i := i0
 	for {
 		j1 := i*2 + 1 // left child
+		// in case of overflow
 		if j1 < 0 || j1 >= n {
 			break
 		}
