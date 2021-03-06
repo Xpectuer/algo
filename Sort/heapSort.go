@@ -1,23 +1,15 @@
-/*
- * @Author: XPectuer
- * @LastEditor: XPectuer
- */
 package mySort
-
-import "fmt"
 
 func heapSort(A *[]int) {
 	if len(*A) <= 1 {
 		return
 	}
 	heapInit(A)
-	k := len(*A) - 1
 
-	fmt.Println(*A)
-	for k > 0 {
+	// fmt.Println(*A)
+	for k := len(*A) - 1; k > 0; k-- {
 		(*A)[0], (*A)[k] = (*A)[k], (*A)[0]
-		k--
-		siftdown(A, k+1, 0)
+		siftdown(A, k, 0)
 	}
 }
 
@@ -28,6 +20,9 @@ func heapInit(A *[]int) {
 	}
 }
 
+// A: the heap
+// n: the size of the heap
+// i0: the index of the element to sift down
 func siftdown(A *[]int, n, i0 int) {
 	// for each node
 	// layer0 / 1 node * h
@@ -36,23 +31,28 @@ func siftdown(A *[]int, n, i0 int) {
 	//...
 	// Hence, T(n) = 1*h + 2*(h-1) + 2^2 * (h-2)
 	// h = logN
-	// O(n)
+	// O(h) = O(logn)
 	i := i0
 	for {
-		j1 := i*2 + 1 // left child
+		j1 := i*2 + 1 // j1: left child
 		// in case of overflow
 		if j1 < 0 || j1 >= n {
 			break
 		}
 		j := j1
+		// j2: right child
 		if j2 := j1 + 1; j2 < n && (*A)[j2] > (*A)[j1] {
 			j = j2 // 2 * i + 2
 		}
+		// obey the definition of heap
 		if (*A)[i] >= (*A)[j] {
 			break
 		}
 
-		(*A)[i], (*A)[j] = (*A)[j], (*A)[i]
+		(*A)[i] ^= (*A)[j]
+		(*A)[j] ^= (*A)[i]
+		(*A)[i] ^= (*A)[j]
+		// keep sifting down
 		i = j
 	}
 }

@@ -1,7 +1,3 @@
-/*
- * @Author: XPectuer
- * @LastEditor: XPectuer
- */
 package mySort
 
 import (
@@ -14,12 +10,13 @@ var (
 )
 
 func init() {
-	A = []int{0, 3, 4, 6, 1, 4, 8, 9, 2}
+	//A = []int{0, 3, 4, 6, 1, 4, 8, 9, 2}
+	A = []int{1, 1, 2, 1, 1, 1, 1, 1, 2}
 	n = len(A)
 }
 func TestHeap(t *testing.T) {
 
-	heapSort(&A)
+	heapSort1(A)
 	t.Log(A)
 }
 
